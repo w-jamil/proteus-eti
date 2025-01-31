@@ -48,8 +48,8 @@ class CILM:
       upper = ((2*ss)-(n*ma))/(n-2)
       lower = ma
     else:
-       upper = 0.0
-       lower = 0.0
+       upper = ma
+       lower = mi
     out = pd.concat([pd.Series(lower),pd.Series(upper)],axis=1).reset_index(drop=True)
 
     out.columns = ["LCI","UCI"]

@@ -31,7 +31,7 @@ Changing following few lines will allow the user to have any data, but the pleas
 
 To run the code:
 - download `cilm`
-- exection example `python devon_rainfall`
+- exection example `python devon_rainfall.py`
 
 Changing following lines will allow the user to have any data, but the please make sure the format is the same.
 
@@ -39,4 +39,23 @@ Changing following lines will allow the user to have any data, but the please ma
 
     pd.read_csv("C:\\Users\\lenovo\\OneDrive\\Documents\\academia\\extremexp\\cilm\\data\\devon_rainfall.csv")
     
+\`\`\`
+
+## PWEA
+
+To run the code:
+- download `pwea`
+- execution example `seaa.py`
+
+Changing following few lines will allow the user to have any data, but the please make sure the format is the same.
+
+\`\`\`
+
+    array = np.loadtxt(args.data_file, delimiter=' ')
+    n = len(array[0][:-1])
+    model = SEAA(args.min_val,args.max_val,args.tuning_parameter,args.switch_rate, n,args.a_a)
+    for i, a in enumerate(array):
+        x, y = a[:-1], a[-1]
+        new_y = model.predict(x)
+        
 \`\`\`

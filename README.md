@@ -14,8 +14,10 @@ To run the code:
 
 Changing following few lines will allow the user to have any data, but the please make sure the format is the same.
 
-\`\`\`python
-for i in range(len(train_dataset.y)):
+\`\`\`
+
+    for i in range(len(train_dataset.y)):
+
         fig_left.scatter(x=train_dataset.dataset.x1[i], y=train_dataset.dataset.x2[i], color=cm.cool(train_dataset.dataset.label[i]), alpha=0.5)
 
         model_PA.fit(train_dataset.feature_vec[i], train_dataset.y[i])
@@ -33,6 +35,8 @@ To run the code:
 
 Changing following lines will allow the user to have any data, but the please make sure the format is the same.
 
-\`\`\`python
-pd.read_csv("C:\\Users\\lenovo\\OneDrive\\Documents\\academia\\extremexp\\cilm\\data\\devon_rainfall.csv")
+\`\`\`
+
+    pd.read_csv("C:\\Users\\lenovo\\OneDrive\\Documents\\academia\\extremexp\\cilm\\data\\devon_rainfall.csv")
+    
 \`\`\`

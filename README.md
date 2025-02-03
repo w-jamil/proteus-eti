@@ -47,6 +47,7 @@ To run the code:
 
 Changing following few lines will allow the user to have any data, but the please make sure the format is the same.
 
+    parser.add_argument("--data-file", default='data/gas.txt', type=str, help="path of the data file")
 
     array = np.loadtxt(args.data_file, delimiter=' ')
     n = len(array[0][:-1])

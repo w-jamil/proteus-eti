@@ -14,7 +14,7 @@ To run the code:
 
 Changing following few lines will allow the user to have any data, but the please make sure the format is the same.
 
-\`\`\`
+
 
     for i in range(len(train_dataset.y)):
 
@@ -25,7 +25,7 @@ Changing following few lines will allow the user to have any data, but the pleas
 
         accuracies_PA.append(test_dataset.valid_training_result(model_PA))
         accuracies_PA_one.append(test_dataset.valid_training_result(model_PA_one))
-\`\`\`
+
 
 ## CILM
 
@@ -35,12 +35,10 @@ To run the code:
 
 Changing following lines will allow the user to have any data, but the please make sure the format is the same.
 
-\`\`\`
+
 
     pd.read_csv("C:\\Users\\lenovo\\OneDrive\\Documents\\academia\\extremexp\\cilm\\data\\devon_rainfall.csv")
     
-\`\`\`
-
 ## PWEA
 
 To run the code:
@@ -49,7 +47,6 @@ To run the code:
 
 Changing following few lines will allow the user to have any data, but the please make sure the format is the same.
 
-\`\`\`
 
     array = np.loadtxt(args.data_file, delimiter=' ')
     n = len(array[0][:-1])
@@ -58,4 +55,4 @@ Changing following few lines will allow the user to have any data, but the pleas
         x, y = a[:-1], a[-1]
         new_y = model.predict(x)
         
-\`\`\`
+

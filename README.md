@@ -37,7 +37,7 @@ Changing following lines will allow the user to have any data, but the please ma
 
 
 
-    pd.read_csv("C:\\Users\\lenovo\\OneDrive\\Documents\\academia\\extremexp\\cilm\\data\\devon_rainfall.csv")
+    pd.read_csv("devon_rainfall.csv")
     
 ## PWEA
 

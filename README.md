@@ -1,6 +1,6 @@
 # OLA (https://yjw.info)
-- OLA = online learning algorithms 
-- REG = online regression learning.
+OLA (online learning algorithms) implementation of the following.
+- REG = regression learning.
 - PAL = passive-aggressive learning.
 - PWEA = prediction with expert advice.
 - CILM = conformal intervals learning machine.

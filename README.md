@@ -20,6 +20,42 @@ Changing following few lines will allow the user to have any data, but the pleas
       for i, a in enumerate(array):
         x, y = a[:-1], a[-1]
         new_y = model.predict(x)
+
+
+### Description  
+
+Online regression - not much worse than the true forecaster in the hindsight.
+  
+### Dependencies
+
+The implementation require `python` along with `argparse` and `numpy`.  
+ 
+
+To get a feel for the tool user will also require: 
+
+`matplotlib.pyplot` and `sklearn.metrics` 
+
+### Inputs
+
+- The original datasets as an array with size 1 x D, where ‘D’ represents the number of dimensions in the original space.  
+
+- Most recent available label. 
+
+ 
+### Outputs    
+
+- Predicted label 
+
+  
+### Specifications for Inputs:   
+
+- Supervised learning method (requires ground truth).  
+
+   
+### Additional considerations:   
+
+- Hyperparametera (optional) initialisation by the use.  
+
   
 ## PAL
 
@@ -42,6 +78,49 @@ Changing following few lines will allow the user to have any data, but the pleas
         accuracies_PA.append(test_dataset.valid_training_result(model_PA))
         accuracies_PA_one.append(test_dataset.valid_training_result(model_PA_one))
 
+
+### Description  
+
+ 
+
+The adaptation to large data and real-time learning crucial challenge in supervised learning, aiming to reliably reveal the underlying data structure by constraining the surrogate loss function through slack variable. Moving average passive aggressive learning solves classification problem. This learning technique has several benefits, to name a few; ability to handle large datasets, real-time learning, minimal memory usage and resistance to overfitting.  
+
+  
+
+### Dependencies
+ 
+
+The implementation requires `python` along with `numpy`, `argparse`, `pandas`.  
+
+ 
+To get a feel for the tool user will also require: 
+
+ 
+`Matplotlib.pyplot`, `matplotlib.cm`, `matplotlib.animation` and `matplotlib.gridspec` 
+
+ 
+
+### Inputs    
+
+- The original datasets as an array with size 1 x D, where ‘D’ represents the number of dimensions in the original space.  
+
+- Most recent available label. 
+
+
+### Outputs    
+
+- Predicted class 
+
+ 
+### Specifications for Inputs:   
+
+- Supervised learning method (requires ground truth).  
+
+### Additional considerations:   
+
+- Hyperparameter (optional) initialisation by the user, default is 0.1.  
+
+  
     
 ## PWEA
 
@@ -59,7 +138,44 @@ Changing following few lines will allow the user to have any data, but the pleas
     for i, a in enumerate(array):
         x, y = a[:-1], a[-1]
         new_y = model.predict(x)
-        
+
+### Description  
+
+
+Super expert aggregation-algorithm is an algorithm that can perform classification. Moreover, the input of the problem at hand may continuously evolve, that is, the underlying distribution of the input changes over time leading to what is known as concept drift. The constraint to adhere to concept drift is imposed through discrete time irreducible Markov chain. 
+
+  
+### Dependencies
+
+The implementation require `python` along with `argparse` and `numpy`.  
+ 
+
+To get a feel for the tool user will also require: 
+
+`matplotlib.pyplot` and `sklearn.metrics` 
+
+### Inputs
+
+- The original datasets as an array with size 1 x D, where ‘D’ represents the number of dimensions in the original space.  
+
+- Most recent available label. 
+
+ 
+### Outputs    
+
+- Predicted label 
+
+  
+### Specifications for Inputs:   
+
+- Supervised learning method (requires ground truth).  
+
+   
+### Additional considerations:   
+
+- Hyperparametera (optional) initialisation by the use.  
+
+
 ## CILM
 
 To run the code:
@@ -68,6 +184,34 @@ To run the code:
 
 Changing following lines will allow the user to have any data, but the please make sure the format is the same.
 
-
-
     pd.read_csv("devon_rainfall.csv")
+
+### Description  
+
+ Prediction precision is an important part of uncertainty modelling, which the conformal intervals learning machines addresses. The objective is to have a routine to continuously obtain predictions by imposing exchangeability constraint.  
+
+ ### Dependencies
+
+The implementation require `python` along with `pandas` and `scipy.stats`.   
+
+To get a feel for the tool user will also require: 
+
+`matplotlib.pyplot`, `seaborn` and `numpy`  
+
+### Inputs
+
+- The original datasets as an array with size 1 x n, where ‘n’ represents the length of the dataset.  
+
+
+### Outputs    
+
+- Neyman’s Prediction Intervals 
+
+- Conformal Prediction Intervals 
+
+### Specifications for Inputs:   
+
+- Supervised learning method (requires ground truth).  
+
+  
+ 

@@ -11,7 +11,7 @@ To run the code:
 - download `onlinereg`
 - execution example `python coirr.py`
 
-Changing following few lines will allow the user to have any data, but the please make sure the format is the same.
+Changing following few lines will allow the user to have any data, but please make sure the format is the same.
 
 
       array = np.loadtxt(args.data_file, delimiter=' ')
@@ -54,7 +54,7 @@ To run the code:
 - execute `python paexp.py`
 - record `python paexp.py --record 1`
 
-Changing following few lines will allow the user to have any data, but the please make sure the format is the same.
+Changing following few lines will allow the user to have any data, but please make sure the format is the same.
 
     parser.add_argument("--data-file", default='data/gas.txt', type=str, help="path of the data file")
 
@@ -99,7 +99,7 @@ To run the code:
 - download `pwea`
 - execution example `seaa.py`
 
-Changing following few lines will allow the user to have any data, but the please make sure the format is the same.
+Changing following few lines will allow the user to have any data, but please make sure the format is the same.
 
     parser.add_argument("--data-file", default='data/gas.txt', type=str, help="path of the data file")
 
@@ -140,7 +140,7 @@ To run the code:
 - download `cilm`
 - exection example `python devon_rainfall.py`
 
-Changing following lines will allow the user to have any data, but the please make sure the format is the same.
+Changing following lines will allow the user to have any data, but please make sure the format is the same.
 
     pd.read_csv("devon_rainfall.csv")
 

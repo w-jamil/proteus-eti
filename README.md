@@ -1,5 +1,5 @@
-# OLA = online learning algorithms (https://yjw.info)
-
+# OLA (https://yjw.info)
+- OLA = online learning algorithms 
 - REG = online regression learning.
 - PAL = passive-aggressive learning.
 - PWEA = prediction with expert advice.

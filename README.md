@@ -40,7 +40,7 @@ To get a feel for the tool user will also require:
 - The original datasets as an array with size 1 x D, where ‘D’ represents the number of dimensions in the original space.  
 - Most recent available label. 
 - Hyperparameters (optional) initialisation by the use.  
-- Supervised learning method (requires ground truth).  
+ 
  
 ### Outputs    
 
@@ -85,8 +85,7 @@ To get a feel for the tool user will also require:
 ### Inputs    
 
 - The original datasets as an array with size 1 x D, where ‘D’ represents the number of dimensions in the original space.  
-- Most recent available label.
-- Supervised learning method (requires available ground truth).  
+- Most recent available label. 
 - Hyperparameter (optional) initialisation by the user, default is 0.1.  
 
 ### Outputs    
@@ -129,7 +128,6 @@ To get a feel for the tool user will also require:
 
 - The original datasets as an array with size 1 x D, where ‘D’ represents the number of dimensions in the original space.  
 - Most recent available label.
-- Supervised learning method (requires available ground truth).  
 - Hyperparametera (optional) initialisation by the use.
   
 ### Outputs    
@@ -161,7 +159,7 @@ To get a feel for the tool user will also require:
 ### Inputs
 
 - The original datasets as an array with size 1 x n, where ‘n’ represents the length of the dataset.
-- Supervised learning method (requires ground truth).  
+- Most recent available label.  
 
 
 ### Outputs    

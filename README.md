@@ -1,11 +1,11 @@
-# OLA (https://yjw.info)
+# OLA = online learning algorithms (https://yjw.info)
 
-- onlinereg for online regression learning.
-- pal for passive-aggressive learning.
-- pwea for prediction with expert advice.
-- cilm for conformal intervals learning machine.
+- REG = online regression learning.
+- PAL = passive-aggressive learning.
+- PWEA = prediction with expert advice.
+- CILM = conformal intervals learning machine.
 
-## ONLINEREG
+## REG
 
 To run the code:
 - download `onlinereg`
@@ -40,22 +40,18 @@ To get a feel for the tool user will also require:
 - The original datasets as an array with size 1 x D, where ‘D’ represents the number of dimensions in the original space.  
 
 - Most recent available label. 
-
  
 ### Outputs    
 
 - Predicted label 
 
-  
 ### Specifications for Inputs:   
 
 - Supervised learning method (requires ground truth).  
-
    
 ### Additional considerations:   
 
 - Hyperparametera (optional) initialisation by the use.  
-
   
 ## PAL
 
@@ -81,29 +77,20 @@ Changing following few lines will allow the user to have any data, but the pleas
 
 ### Description  
 
- 
-
 The adaptation to large data and real-time learning crucial challenge in supervised learning, aiming to reliably reveal the underlying data structure by constraining the surrogate loss function through slack variable. Moving average passive aggressive learning solves classification problem. This learning technique has several benefits, to name a few; ability to handle large datasets, real-time learning, minimal memory usage and resistance to overfitting.  
 
-  
 
 ### Dependencies
  
-
 The implementation requires `python` along with `numpy`, `argparse`, `pandas`.  
 
- 
 To get a feel for the tool user will also require: 
-
  
 `Matplotlib.pyplot`, `matplotlib.cm`, `matplotlib.animation` and `matplotlib.gridspec` 
-
- 
 
 ### Inputs    
 
 - The original datasets as an array with size 1 x D, where ‘D’ represents the number of dimensions in the original space.  
-
 - Most recent available label. 
 
 
@@ -111,7 +98,6 @@ To get a feel for the tool user will also require:
 
 - Predicted class 
 
- 
 ### Specifications for Inputs:   
 
 - Supervised learning method (requires ground truth).  
@@ -119,8 +105,6 @@ To get a feel for the tool user will also require:
 ### Additional considerations:   
 
 - Hyperparameter (optional) initialisation by the user, default is 0.1.  
-
-  
     
 ## PWEA
 
@@ -141,7 +125,6 @@ Changing following few lines will allow the user to have any data, but the pleas
 
 ### Description  
 
-
 Super expert aggregation-algorithm is an algorithm that can perform classification. Moreover, the input of the problem at hand may continuously evolve, that is, the underlying distribution of the input changes over time leading to what is known as concept drift. The constraint to adhere to concept drift is imposed through discrete time irreducible Markov chain. 
 
   
@@ -157,10 +140,8 @@ To get a feel for the tool user will also require:
 ### Inputs
 
 - The original datasets as an array with size 1 x D, where ‘D’ represents the number of dimensions in the original space.  
-
 - Most recent available label. 
 
- 
 ### Outputs    
 
 - Predicted label 
@@ -188,7 +169,7 @@ Changing following lines will allow the user to have any data, but the please ma
 
 ### Description  
 
- Prediction precision is an important part of uncertainty modelling, which the conformal intervals learning machines addresses. The objective is to have a routine to continuously obtain predictions by imposing exchangeability constraint.  
+Prediction precision is an important part of uncertainty modelling, which the conformal intervals learning machines addresses. The objective is to have a routine to continuously obtain predictions by imposing exchangeability constraint.  
 
  ### Dependencies
 
@@ -206,7 +187,6 @@ To get a feel for the tool user will also require:
 ### Outputs    
 
 - Neyman’s Prediction Intervals 
-
 - Conformal Prediction Intervals 
 
 ### Specifications for Inputs:   

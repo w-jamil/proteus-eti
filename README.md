@@ -1,5 +1,5 @@
 # OLA (https://yjw.info)
-Following OLA (online learning algorithms) implementation.
+Following OLA (online learning algorithms) implementations.
 - REG = regression learning.
 - PAL = passive-aggressive learning.
 - PWEA = prediction with expert advice.

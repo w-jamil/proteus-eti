@@ -38,27 +38,21 @@ To get a feel for the tool user will also require:
 ### Inputs
 
 - The original datasets as an array with size 1 x D, where ‘D’ represents the number of dimensions in the original space.  
-
 - Most recent available label. 
+- Hyperparameters (optional) initialisation by the use.  
+- Supervised learning method (requires ground truth).  
  
 ### Outputs    
 
 - Predicted label 
 
-### Specifications for Inputs:   
-
-- Supervised learning method (requires ground truth).  
-   
-### Additional considerations:   
-
-- Hyperparametera (optional) initialisation by the use.  
   
 ## PAL
 
 To run the code:
 - download `pal` 
 - execute `python paexp.py`
-- record `python python paexp.py --record 1`
+- record `python paexp.py --record 1`
 
 Changing following few lines will allow the user to have any data, but the please make sure the format is the same.
 
@@ -91,20 +85,14 @@ To get a feel for the tool user will also require:
 ### Inputs    
 
 - The original datasets as an array with size 1 x D, where ‘D’ represents the number of dimensions in the original space.  
-- Most recent available label. 
-
+- Most recent available label.
+- Supervised learning method (requires available ground truth).  
+- Hyperparameter (optional) initialisation by the user, default is 0.1.  
 
 ### Outputs    
 
 - Predicted class 
 
-### Specifications for Inputs:   
-
-- Supervised learning method (requires ground truth).  
-
-### Additional considerations:   
-
-- Hyperparameter (optional) initialisation by the user, default is 0.1.  
     
 ## PWEA
 
@@ -140,22 +128,13 @@ To get a feel for the tool user will also require:
 ### Inputs
 
 - The original datasets as an array with size 1 x D, where ‘D’ represents the number of dimensions in the original space.  
-- Most recent available label. 
-
+- Most recent available label.
+- Supervised learning method (requires available ground truth).  
+- Hyperparametera (optional) initialisation by the use.
+  
 ### Outputs    
 
 - Predicted label 
-
-  
-### Specifications for Inputs:   
-
-- Supervised learning method (requires ground truth).  
-
-   
-### Additional considerations:   
-
-- Hyperparametera (optional) initialisation by the use.  
-
 
 ## CILM
 
@@ -181,17 +160,11 @@ To get a feel for the tool user will also require:
 
 ### Inputs
 
-- The original datasets as an array with size 1 x n, where ‘n’ represents the length of the dataset.  
+- The original datasets as an array with size 1 x n, where ‘n’ represents the length of the dataset.
+- Supervised learning method (requires ground truth).  
 
 
 ### Outputs    
 
 - Neyman’s Prediction Intervals 
 - Conformal Prediction Intervals 
-
-### Specifications for Inputs:   
-
-- Supervised learning method (requires ground truth).  
-
-  
- 

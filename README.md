@@ -37,8 +37,7 @@ To get a feel for the tool user will also require:
 
 ### Inputs
 
-- The original datasets as an array with size 1 x D, where ‘D’ represents the number of dimensions in the original space.  
-- Most recent available label. 
+- The original datasets as an array with size N x D, where ‘D’ represents the number of dimensions in the original space and ‘N’ is the number of observations.   
 - Hyperparameters (optional) initialisation by the use.  
  
  
@@ -84,8 +83,7 @@ To get a feel for the tool user will also require:
 
 ### Inputs    
 
-- The original datasets as an array with size 1 x D, where ‘D’ represents the number of dimensions in the original space.  
-- Most recent available label. 
+- The original datasets as an array with size N x D, where ‘D’ represents the number of dimensions in the original space and ‘N’ is the number of observations.     
 - Hyperparameter (optional) initialisation by the user, default is 0.1.  
 
 ### Outputs    
@@ -126,8 +124,7 @@ To get a feel for the tool user will also require:
 
 ### Inputs
 
-- The original datasets as an array with size 1 x D, where ‘D’ represents the number of dimensions in the original space.  
-- Most recent available label.
+- The original datasets as an array with size N x D, where ‘D’ represents the number of dimensions in the original space and ‘N’ is the number of observations.   
 - Hyperparametera (optional) initialisation by the use.
   
 ### Outputs    

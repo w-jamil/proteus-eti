@@ -52,7 +52,20 @@ To run the code:
 - download `pal` 
 - execute `python palnt.py`
 
-The user to have any data, but please make sure the format is the same.
+Changing following few lines will allow the user to have any data, but please make sure the format is the same.
+
+    array = np.loadtxt(args.data_file, delimiter=' ')
+    n = len(array[0][:-1])
+    f1_score = []
+    model = PALNT(n)
+    y_pred = np.ones(len(array))
+    y_vec = np.ones(len(array))
+    for i, a in enumerate(array):
+        x, y = a[:-1], a[-1]
+        new_y = model.predict(x)
+        y_pred[i] = new_y
+        y_vec[i] = y
+        model.delta(x, y)
 
 ### Description  
 

@@ -69,7 +69,7 @@ Changing following few lines will allow the user to have any data, but please ma
 
 ### Description  
 
-The adaptation to large data and real-time learning is a crucial challenge in supervised learning, aiming to reliably reveal the underlying data structure by constraining the surrogate loss function through slack variable. Moving average passive aggressive learning solves classification problem. This learning technique has several benefits, to name a few; ability to handle large datasets, real-time learning, minimal memory usage and resistance to overfitting.  
+The adaptation to large data and real-time learning is a crucial challenge in supervised learning, aiming to reliably reveal the underlying data structure by constraining the surrogate loss function through slack variable. This learning technique has several benefits, to name a few; ability to handle large datasets, real-time learning, minimal memory usage and resistance to overfitting.  
 
 
 ### Dependencies

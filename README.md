@@ -78,12 +78,11 @@ The implementation requires `python` along with `numpy`, `argparse`, `pandas`.�
 
 To get a feel for the tool user will also require: 
  
-`Matplotlib.pyplot`, `matplotlib.cm`, `matplotlib.animation` and `matplotlib.gridspec` 
+`matplotlib.pyplot` and `sklearn.metrics` 
 
 ### Inputs    
 
 - The original datasets as an array with size N x D, where ‘D’ represents the number of dimensions in the original space and ‘N’ is the number of observations.     
-- Hyperparameter (optional) initialisation by the user, default is 0.1.  
 
 ### Outputs    
 

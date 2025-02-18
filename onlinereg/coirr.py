@@ -6,7 +6,7 @@ from base import BaseModel
 
 parser = argparse.ArgumentParser(description="Run the COIRR algorithm in sequential mode")
 
-parser.add_argument("--data-file", default='data/gas.txt', type=str,
+parser.add_argument("--data-file", default='data/Crypto_desktop.txt', type=str,
                     help="path of the data file")
 
 parser.add_argument("--tuning-parameter", default=0.6, type=float,
@@ -43,7 +43,7 @@ class COIRR(BaseModel):
 if __name__ == "__main__":
     args = parser.parse_args()
 
-    array = np.loadtxt(args.data_file, delimiter=' ')
+    array = np.loadtxt(args.data_file, delimiter='\t')
     n = len(array[0][:-1])
     model = COIRR(args.tuning_parameter, n)
     for i, a in enumerate(array):

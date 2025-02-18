@@ -67,6 +67,15 @@ Changing following few lines will allow the user to have any data, but please ma
         y_vec[i] = y
         model.delta(x, y)
 
+You may download data from `https://zenodo.org/api/records/13787591/files-archive` and do the following:
+
+    df = pd.read_parquet("data/Phishing_smartphone.parquet")
+    data = df.drop(['entity','user_id','timestamp','ssl_version_ratio_v20','ssl_version_ratio_v30'],axis=1)
+    data['label'] = data['label'].replace(0,-1)
+    data.to_csv("data\\Phishing_smartphone.txt",sep='\t', index=False,header=False)
+
+which will save all the data in the data directory.
+
 ### Description  
 
 The adaptation to large data and real-time learning is a crucial challenge in supervised learning, aiming to reliably reveal the underlying data structure by constraining the surrogate loss function through slack variable. This learning technique has several benefits, to name a few; ability to handle large datasets, real-time learning, minimal memory usage and resistance to overfitting.  

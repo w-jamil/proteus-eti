@@ -7,7 +7,7 @@ import cilm as lm
 
 # fred = Fred(api_key='5e4a18b3ce1c062376bf966bea553db9')
 # data = fred.get_series('FEDFUNDS')
-fred = pd.read_csv("C:\\Users\\lenovo\\OneDrive\\Documents\\academia\\extremexp\\cilm\\data\\us_rates.csv")
+fred = pd.read_csv("C:\\cilm\\data\\us_rates.csv")
 fred.columns = ['DATE',"RATES"]
 fred['DATE'] = pd.to_datetime(fred['DATE'],dayfirst=True)
 fred.index = fred.DATE

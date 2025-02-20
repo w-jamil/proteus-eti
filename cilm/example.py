@@ -1,13 +1,10 @@
 import pandas as pd
 import cilm as lm
+import matplotlib.pyplot as plt
 
 
 
-####################################################################################################
-
-# fred = Fred(api_key='5e4a18b3ce1c062376bf966bea553db9')
-# data = fred.get_series('FEDFUNDS')
-fred = pd.read_csv("C:\\cilm\\data\\us_rates.csv")
+fred = pd.read_csv("C:\\Documents\\OLA\\cilm\\data\\us_rates.csv")
 fred.columns = ['DATE',"RATES"]
 fred['DATE'] = pd.to_datetime(fred['DATE'],dayfirst=True)
 fred.index = fred.DATE
@@ -29,6 +26,7 @@ for i in range(len(classical_case)):
     cc.append(-1)
   else:
     cc.append(1)
+
 machine_case = out[["ACTUAL","CLCI","CUCI"]]
 ###############################################################################
 # If Y is outside the interval assign -1 else 1
@@ -47,6 +45,8 @@ for i in range(len(machine_case)):
 output = pd.concat([pd.Series(mc),pd.Series(cc)],axis=1)
 output.columns = ["MACHINE","CLASSICAL"]
 
+
+
 print("PERCENTAGE OF CILM OUTSIDE:")
 print(round(abs(output[output.MACHINE == -1]["MACHINE"].sum())/len(output),4))
 
@@ -56,7 +56,7 @@ print(round(1-abs(output[output.MACHINE == -1]["MACHINE"].sum())/len(output),4))
 
 
 print("CALIBRATION ERROR CILM:")
-print(round(abs(0.95-abs(output[output.MACHINE == -1]["MACHINE"].sum())/len(output),4)))
+print(round(abs(0.95-abs(output[output.MACHINE == -1]["MACHINE"].sum()))/len(output),4))
 
 
 print("PERCENTAGE OF NCI OUTSIDE:")
@@ -66,7 +66,11 @@ print("ACCURACY OF NCI:")
 print(round(1-abs(output[output.CLASSICAL == -1]["CLASSICAL"].sum())/len(output),4))
 
 print("CALIBRATION ERROR NCI:")
-print(round(abs(0.95-abs(output[output.CLASSICAL == -1]["CLASSICAL"].sum())/len(output),4)))
+print(round(abs(0.95-abs(output[output.CLASSICAL == -1]["CLASSICAL"].sum()))/len(output),4))
 
 ############################################################
 
+classical_case.plot()
+plt.show()
+machine_case.plot()
+plt.show()

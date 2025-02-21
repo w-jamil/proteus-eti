@@ -15,12 +15,12 @@ parser.add_argument("--data-file", default='data/Phishing_smartphone.txt', type=
 parser.add_argument("--tuning-parameter", default=0.00001, type=float,
                     help="The value of the tuning parameter.")
 
-class PALNT(BaseModel):
+class OGL(BaseModel):
     """This class implements Online PAL with no tuning parameter. 
     """
 
     def __init__(self, a,n):
-        super(PALNT, self).__init__(a,n)
+        super(OGL, self).__init__(a,n)
 
     def delta(self, x, y):
         self.w = self.w + (1-y*np.sign(self.w.dot(x)))/(x.dot(x)**.5+self.a)*y*x
@@ -37,7 +37,7 @@ if __name__ == "__main__":
     array = np.loadtxt(args.data_file, delimiter='\t')
     n = len(array[0][:-1])
     f1_score = []
-    model = PALNT(args.tuning_parameter,n)
+    model = OGL(args.tuning_parameter,n)
     y_pred = np.ones(len(array))
     y_vec = np.ones(len(array))
     for i, a in enumerate(array):

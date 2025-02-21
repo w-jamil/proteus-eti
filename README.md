@@ -57,7 +57,7 @@ Changing following few lines will allow the user to have any data, but please ma
     array = np.loadtxt(args.data_file, delimiter=' ')
     n = len(array[0][:-1])
     f1_score = []
-    model = PALNT(args.tuning_parameter,n)
+    model = OGL(args.tuning_parameter,n)
     y_pred = np.ones(len(array))
     y_vec = np.ones(len(array))
     for i, a in enumerate(array):

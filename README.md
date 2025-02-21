@@ -67,14 +67,12 @@ Changing following few lines will allow the user to have any data, but please ma
         y_vec[i] = y
         model.delta(x, y)
 
-You may download data from `https://zenodo.org/api/records/13787591/files-archive` and do the following:
+You may download data from `https://zenodo.org/api/records/13787591/files-archive` and do the following on all  to save all data:
 
     df = pd.read_parquet("data/Phishing_smartphone.parquet")
     data = df.drop(['entity','user_id','timestamp','ssl_version_ratio_v20','ssl_version_ratio_v30'],axis=1)
     data['label'] = data['label'].replace(0,-1)
-    data.to_csv("data\\Phishing_smartphone.txt",sep='\t', index=False,header=False)
-
-which will save all the data in the data directory.
+    data.to_csv("C:/oglclass/data/Phishing_smartphone.txt",sep='\t', index=False,header=False)
 
 ### Description  
 

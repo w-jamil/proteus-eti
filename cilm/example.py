@@ -1,10 +1,13 @@
 import pandas as pd
 import cilm as lm
 import matplotlib.pyplot as plt
+import time
+import numpy as np
+import matplotlib.cm as cm
+import matplotlib.animation as animation
+import matplotlib.gridspec as gridspec
 
-
-
-fred = pd.read_csv("C:\\Documents\\OLA\\cilm\\data\\us_rates.csv")
+fred = pd.read_csv("C:\\Users\\lenovo\\OneDrive\\Documents\\OLA\\cilm\\data\\us_rates.csv")
 fred.columns = ['DATE',"RATES"]
 fred['DATE'] = pd.to_datetime(fred['DATE'],dayfirst=True)
 fred.index = fred.DATE
@@ -68,9 +71,13 @@ print(round(1-abs(output[output.CLASSICAL == -1]["CLASSICAL"].sum())/len(output)
 print("CALIBRATION ERROR NCI:")
 print(round(abs(0.95-abs(output[output.CLASSICAL == -1]["CLASSICAL"].sum()))/len(output),4))
 
-############################################################
 
-classical_case.plot()
-plt.show()
-machine_case.plot()
+
+fig, axes = plt.subplots(nrows=2, ncols=1)
+
+
+classical_case.plot(ax=axes[0])
+
+machine_case.plot(ax=axes[1])
+
 plt.show()

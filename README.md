@@ -46,11 +46,11 @@ To get a feel for the tool user will also require:
 - Predicted label 
 
   
-## PAL
+## OGL
 
 To run the code:
-- download `pal` 
-- execute `python palnt.py`
+- download `oglclass` 
+- execute `python oglc.py`
 
 Changing following few lines will allow the user to have any data, but please make sure the format is the same.
 

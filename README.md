@@ -1,7 +1,7 @@
 # OLA (https://yjw.info)
 Following OLA (online learning algorithms) implementations.
 - REG = regression learning.
-- OGL = online gradient learning.
+- OGL = online gradient (classification) learning.
 - PWEA = prediction with expert advice.
 - CILM = conformal intervals learning machine.
 

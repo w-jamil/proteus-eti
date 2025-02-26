@@ -23,7 +23,7 @@ class OGL(BaseModel):
         super(OGL, self).__init__(a,n)
 
     def delta(self, x, y):
-        self.w = self.w + (1-y*np.sign(self.w.dot(x)))/(x.dot(x)**.5+self.a)*y*x
+        self.w = self.w + (y-np.sign(self.w.dot(x)))/(x.dot(x)**.5+self.a)*x
         return {'w': self.w}
 
     def predict(self, x):

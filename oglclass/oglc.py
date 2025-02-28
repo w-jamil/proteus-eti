@@ -9,7 +9,7 @@ from sklearn.metrics import classification_report
 
 parser = argparse.ArgumentParser(description="Run the PAL algorithm in sequential mode")
 
-parser.add_argument("--data-file", default='data/Phishing_smartphone.txt', type=str,
+parser.add_argument("--data-file", default='data/uc2.txt', type=str,
                     help="path of the data file")
 
 parser.add_argument("--tuning-parameter", default=0.00001, type=float,
@@ -23,7 +23,7 @@ class OGL(BaseModel):
         super(OGL, self).__init__(a,n)
 
     def delta(self, x, y):
-        self.w = self.w + (y-np.sign(self.w.dot(x)))/(x.dot(x)+self.a)*x
+        self.w = self.w + (y-np.sign(self.w.dot(x)))/(x.dot(x)**.5+self.a)*x
         return {'w': self.w}
 
     def predict(self, x):

@@ -16,14 +16,14 @@ parser.add_argument("--tuning-parameter", default=0.00001, type=float,
                     help="The value of the tuning parameter.")
 
 class OGL(BaseModel):
-    """This class implements Online PAL with no tuning parameter. 
+    """This class implements OGL with no tuning parameter. 
     """
 
     def __init__(self, a,n):
         super(OGL, self).__init__(a,n)
 
     def delta(self, x, y):
-        self.w = self.w + (y-np.sign(self.w.dot(x)))/(x.dot(x)**.5+self.a)*x
+        self.w = self.w + (y-np.sign(self.w.dot(x)))/(x.dot(x)+self.a)*x
         return {'w': self.w}
 
     def predict(self, x):

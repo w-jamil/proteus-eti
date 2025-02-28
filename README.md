@@ -76,7 +76,7 @@ You may download data from `https://zenodo.org/api/records/13787591/files-archiv
 
 ### Description  
 
-The adaptation to large data and real-time learning is a crucial challenge in supervised learning, aiming to reliably reveal the underlying data structure by constraining the surrogate loss function through slack variable. This learning technique has several benefits, to name a few; ability to handle large datasets, real-time learning, minimal memory usage and resistance to overfitting.  
+The adaptation to large data and real-time learning is a crucial challenge in supervised learning, aiming to reliably reveal the underlying data structure by constraining the surrogate loss function through slack variable. This learning technique has several benefits, to name a few; ability to handle large datasets, real-time learning, minimal memory usage and resistance to overfitting. The well know validation test for time-series data is to check if the previous label as prediction. If features are useful then, you will be able to outperform the previous label prediction. In the above case sorting will lead to poor results in one class. The second data which is also a real-world data features are more thoughtfully collected and are useful. The data is after sorting of the timestamp.
 
 
 ### Dependencies

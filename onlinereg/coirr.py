@@ -1,12 +1,12 @@
 import numpy as np
 import argparse
 import matplotlib.pyplot as plt
-
+import pandas as pd
 from base import BaseModel
 
 parser = argparse.ArgumentParser(description="Run the COIRR algorithm in sequential mode")
 
-parser.add_argument("--data-file", default='data/Crypto_desktop.txt', type=str,
+parser.add_argument("--data-file", default='data/temp2.txt', type=str,
                     help="path of the data file")
 
 parser.add_argument("--tuning-parameter", default=0.6, type=float,
@@ -43,6 +43,8 @@ class COIRR(BaseModel):
 if __name__ == "__main__":
     args = parser.parse_args()
 
+    lst = pd.DataFrame()
+
     array = np.loadtxt(args.data_file, delimiter='\t')
     n = len(array[0][:-1])
     model = COIRR(args.tuning_parameter, n)
@@ -53,6 +55,8 @@ if __name__ == "__main__":
         if i != 0:
             plt.scatter(y, new_y)
         model.delta(x, y)
-    plt.show()
+        a = pd.concat([pd.Series(y), pd.Series(new_y)],axis=1)
+        lst = pd.concat([lst,a],axis=0)
 
+    plt.show()
 

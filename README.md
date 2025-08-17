@@ -1,170 +1,84 @@
-# OLA (https://yjw.info)
-Following OLA (online learning algorithms) implementations.
-- REG = regression learning.
-- OGL = online gradient (classification) learning.
-- PWEA = prediction with expert advice.
-- CILM = conformal intervals learning machine.
+# OLA: REGRESSION ONLINE ALGORITHMS FROM SOLMA
 
-## REG
+This repository, **OLA (Online Learning Algorithms)**, contains Python implementations of online regression algorithms inspired by the **SOLMA** library. These tools are specifically designed for efficient processing of sequential data, enabling real-time predictions and adaptive learning in dynamic environments.
 
-To run the code:
-- download `onlinereg`
-- execution example `python coirr.py`
+The online regression algorithms within this library have been specifically implemented and validated on datasets from the **Energy Technology Institute (ETI)**, showcasing their practical utility in real-world energy-related forecasting applications. Additionally, the `ralgo` folder within this repository contains implementations tested with various datasets sourced from the **UCI Machine Learning Repository**. A dedicated study on the performance of a key online learning algorithm under various delayed and batched feedback protocols is also available as `delayed_feedback.py` directly within the `onlinereg` folder.
 
-Changing following few lines will allow the user to have any data, but please make sure the format is the same.
+---
 
+## Getting Started
 
-      array = np.loadtxt(args.data_file, delimiter=' ')
-      n = len(array[0][:-1])
-      model = COIRR(args.tuning_parameter, n)
-      for i, a in enumerate(array):
-        x, y = a[:-1], a[-1]
-        new_y = model.predict(x)
+To get started with the implementations, follow these general steps:
 
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/w-jamil/ola.git
+    cd ola
+    ```
+2.  **Navigate to the specific algorithm's directory** (e.g., `onlinereg`, or `onlinereg/ralgo`).
+3.  **Install common and specific dependencies** as listed below.
 
-### Description  
+### General Dependencies
 
-Online regression - not much worse than the true forecaster in the hindsight.
-  
-### Dependencies
+All implementations require `Python 3.x` and core libraries like `numpy` and `argparse`.
+For visualization and metrics, `matplotlib.pyplot` and `sklearn.metrics` are also frequently used.
 
-The implementation require `python` along with `argparse` and `numpy`.  
- 
+You can install these common dependencies using pip:
+```bash
+pip install numpy argparse matplotlib scikit-learn pandas scipy seaborn
+```
 
-To get a feel for the tool user will also require: 
+---
 
-`matplotlib.pyplot` and `sklearn.metrics` 
+## Algorithms Overview
 
-### Inputs
+Each algorithm is encapsulated within its own subdirectory. Detailed instructions and descriptions are provided below.
 
-- The original datasets as an array with size N x D, where ‘D’ represents the number of dimensions in the original space and ‘N’ is the number of observations.   
-- Hyperparameters (optional) initialisation by the use.  
- 
- 
-### Outputs    
+### 1. REG: Regression Learning
 
-- Predicted label 
+This module offers implementations for online regression, focusing on algorithms that excel in sequential prediction tasks. These methods are designed to perform comparably to an optimal forecaster in hindsight, making them highly suitable for dynamic environments where data arrives continuously.
 
-  
-## OGL
+-   **Description:** Online regression algorithms designed to perform not much worse than the true forecaster in hindsight. These algorithms have been specifically implemented and tested on data from the Energy Technology Institute (ETI). The `ralgo` folder contains additional algorithm implementations alongside datasets sourced from the UCI Machine Learning Repository. Furthermore, the `delayed_feedback.py` script within `onlinereg` features studies on the behavior and performance of a best-performing online learning algorithm under various delayed and batched feedback scenarios.
 
-To run the code:
-- download `oglclass` 
-- execute `python oglc.py`
+-   **How to Run:**
+    1.  Navigate to the `onlinereg` directory:
+        ```bash
+        cd onlinereg
+        ```
+    2.  Execute the desired script (replace `algoname.py` with the actual script name, e.g., `coirr.py` or `delayed_feedback.py`):
+        ```bash
+        python algoname.py
+        # Example for the delayed feedback study:
+        # python delayed_feedback.py
+        ```
+    3.  **Customizing Data Input:** The scripts are designed to be easily adaptable for custom datasets. Ensure your data file adheres to the `N x D` array format (N observations, D dimensions), where the last column represents the target label `y`.
+        ```python
+        # Lines to review and potentially modify in your chosen regression script (e.g., coirr.py)
+        array = np.loadtxt(args.data_file, delimiter=' ') # Adjust delimiter if needed
+        n = len(array[:-1]) # D dimensions
+        model = COIRR(args.tuning_parameter, n) # Or other specific algorithm class
+        for i, a in enumerate(array):
+          x, y = a[:-1], a[-1] # x are features, y is label
+          new_y = model.predict(x)
+        ```
 
-Changing following few lines will allow the user to have any data, but please make sure the format is the same.
+-   **Dependencies:**
+    -   `numpy`
+    -   `argparse`
+    -   `matplotlib.pyplot` (for visualization)
+    -   `sklearn.metrics` (for performance evaluation)
+    -   `pandas` (for data processing, particularly in `delayed_feedback.py`)
 
-    array = np.loadtxt(args.data_file, delimiter=' ')
-    n = len(array[0][:-1])
-    f1_score = []
-    model = OGL(args.tuning_parameter,n)
-    y_pred = np.ones(len(array))
-    y_vec = np.ones(len(array))
-    for i, a in enumerate(array):
-        x, y = a[:-1], a[-1]
-        new_y = model.predict(x)
-        y_pred[i] = new_y
-        y_vec[i] = y
-        model.delta(x, y)
+-   **Inputs:**
+    -   The original dataset as an array with size `N x D`, where `D` is the number of dimensions in the original space and `N` is the number of observations. The last column is assumed to be the label. This includes datasets from the UCI Machine Learning Repository found in the `ralgo` folder.
+    -   Hyperparameters (optional) can be initialized via `argparse`.
 
-You may download data from `https://zenodo.org/api/records/13787591/files-archive` and do the following on all  to save all data:
+-   **Outputs:**
+    -   Predicted label for each observation.
 
-    df = pd.read_parquet("data/Phishing_smartphone.parquet")
-    data = df.drop(['entity','user_id','timestamp','ssl_version_ratio_v20','ssl_version_ratio_v30'],axis=1)
-    data['label'] = data['label'].replace(0,-1)
-    data.to_csv("C:/oglclass/data/Phishing_smartphone.txt",sep='\t', index=False,header=False)
+---
 
-### Description  
+## Contributing
 
-The adaptation to large data and real-time learning is a crucial challenge in supervised learning, aiming to reliably reveal the underlying data structure by constraining the surrogate loss function through slack variable. This learning technique has several benefits, to name a few; ability to handle large datasets, real-time learning, minimal memory usage and resistance to overfitting. The well know validation test for time-series data is to check if the previous label as prediction. If features are useful then, you will be able to outperform the previous label prediction. In the above case sorting will lead to poor results in one class. The second data which is also a real-world data features are more thoughtfully collected and are useful. The data is after sorting of the timestamp.
+Contributions are welcome! If you encounter any bugs, have feature requests, or wish to contribute code, please feel free to open an issue or submit a pull request on the GitHub repository.
 
-
-### Dependencies
- 
-The implementation requires `python` along with `numpy`, `argparse`, `pandas`.  
-
-To get a feel for the tool user will also require: 
- 
-`matplotlib.pyplot` and `sklearn.metrics` 
-
-### Inputs    
-
-- The original datasets as an array with size N x D, where ‘D’ represents the number of dimensions in the original space and ‘N’ is the number of observations.     
-
-### Outputs    
-
-- Predicted class 
-
-    
-## PWEA
-
-To run the code:
-- download `pwea`
-- execution example `seaa.py`
-
-Changing following few lines will allow the user to have any data, but please make sure the format is the same.
-
-    parser.add_argument("--data-file", default='data/gas.txt', type=str, help="path of the data file")
-
-    array = np.loadtxt(args.data_file, delimiter=' ')
-    n = len(array[0][:-1])
-    model = SEAA(args.min_val,args.max_val,args.tuning_parameter,args.switch_rate, n,args.a_a)
-    for i, a in enumerate(array):
-        x, y = a[:-1], a[-1]
-        new_y = model.predict(x)
-
-### Description  
-
-Super expert aggregation-algorithm is an algorithm that can perform classification. Moreover, the input of the problem at hand may continuously evolve, that is, the underlying distribution of the input changes over time leading to what is known as concept drift. The constraint to adhere to concept drift is imposed through discrete time irreducible Markov chain. 
-
-  
-### Dependencies
-
-The implementation require `python` along with `argparse` and `numpy`.  
- 
-
-To get a feel for the tool user will also require: 
-
-`matplotlib.pyplot` and `sklearn.metrics` 
-
-### Inputs
-
-- The original datasets as an array with size N x D, where ‘D’ represents the number of dimensions in the original space and ‘N’ is the number of observations.   
-- Hyperparametera (optional) initialisation by the use.
-  
-### Outputs    
-
-- Predicted label 
-
-## CILM
-
-To run the code:
-- download `cilm`
-- exection example `python devon_rainfall.py`
-
-Changing following lines will allow the user to have any data, but please make sure the format is the same.
-
-    pd.read_csv("devon_rainfall.csv")
-
-### Description  
-
-Prediction precision is an important part of uncertainty modelling, which the conformal intervals learning machines addresses. The objective is to have a routine to continuously obtain predictions by imposing exchangeability constraint.  
-
- ### Dependencies
-
-The implementation require `python` along with `pandas` and `scipy.stats`.   
-
-To get a feel for the tool user will also require: 
-
-`matplotlib.pyplot`, `seaborn` and `numpy`  
-
-### Inputs
-
-- The original datasets as an array with size 1 x n, where ‘n’ represents the length of the dataset.
-- Most recent available label.  
-
-
-### Outputs    
-
-- Neyman’s Prediction Intervals 
-- Conformal Prediction Intervals 

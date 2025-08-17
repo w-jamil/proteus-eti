@@ -1,6 +1,6 @@
-# OLA: REGRESSION ONLINE ALGORITHMS FROM SOLMA
+# ONLINE REGRESSION ALGORITHMS FROM SOLMA
 
-This repository, **OLA (Online Learning Algorithms)**, contains Python implementations of online regression algorithms inspired by the **SOLMA** library. These tools are specifically designed for efficient processing of sequential data, enabling real-time predictions and adaptive learning in dynamic environments.
+This repository, contains Python implementations of online regression algorithms from **SOLMA** library. These algorithms are specifically designed for efficient processing of sequential data, enabling real-time predictions and adaptive learning in dynamic environments.
 
 The online regression algorithms within this library have been specifically implemented and validated on datasets from the **Energy Technology Institute (ETI)**, showcasing their practical utility in real-world energy-related forecasting applications. Additionally, the `ralgo` folder within this repository contains implementations tested with various datasets sourced from the **UCI Machine Learning Repository**. A dedicated study on the performance of a key online learning algorithm under various delayed and batched feedback protocols is also available as `delayed_feedback.py` directly within the `onlinereg` folder.
 
@@ -13,7 +13,7 @@ To get started with the implementations, follow these general steps:
 1.  **Clone the repository:**
     ```bash
     git clone https://github.com/w-jamil/ola.git
-    cd ola
+    cd proteus-eti
     ```
 2.  **Navigate to the specific algorithm's directory** (e.g., `onlinereg`, or `onlinereg/ralgo`).
 3.  **Install common and specific dependencies** as listed below.
@@ -29,16 +29,6 @@ pip install numpy argparse matplotlib scikit-learn pandas scipy seaborn
 ```
 
 ---
-
-## Algorithms Overview
-
-Each algorithm is encapsulated within its own subdirectory. Detailed instructions and descriptions are provided below.
-
-### 1. REG: Regression Learning
-
-This module offers implementations for online regression, focusing on algorithms that excel in sequential prediction tasks. These methods are designed to perform comparably to an optimal forecaster in hindsight, making them highly suitable for dynamic environments where data arrives continuously.
-
--   **Description:** Online regression algorithms designed to perform not much worse than the true forecaster in hindsight. These algorithms have been specifically implemented and tested on data from the Energy Technology Institute (ETI). The `ralgo` folder contains additional algorithm implementations alongside datasets sourced from the UCI Machine Learning Repository. Furthermore, the `delayed_feedback.py` script within `onlinereg` features studies on the behavior and performance of a best-performing online learning algorithm under various delayed and batched feedback scenarios.
 
 -   **How to Run:**
     1.  Navigate to the `onlinereg` directory:
@@ -78,7 +68,5 @@ This module offers implementations for online regression, focusing on algorithms
 
 ---
 
-## Contributing
-
-Contributions are welcome! If you encounter any bugs, have feature requests, or wish to contribute code, please feel free to open an issue or submit a pull request on the GitHub repository.
+Contributions are welcome. If you encounter any bugs, have feature requests, or wish to contribute code, please feel free to open an issue or submit a pull request on the GitHub repository.
 
